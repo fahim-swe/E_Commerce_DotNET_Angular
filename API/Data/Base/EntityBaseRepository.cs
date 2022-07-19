@@ -1,4 +1,5 @@
 ﻿using API.Data;
+using API.Data.Base.Specifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Collections.Generic;
@@ -41,8 +42,18 @@ namespace E_Commerce_App_Practices_1.Data.Base
 
         public async Task<T> getByIdAsync(int id)
         {
-            var resutl = await _context.Set<T>().FirstOrDefaultAsync(n => n.Id == id);
-            return resutl;
+            var result = await _context.Set<T>().FirstOrDefaultAsync(n => n.Id == id);
+            return result;
+        }
+
+        public Task<T> GetEntityWithSpec(ISpecification<T> spec)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task UpdateAsync(int id, T entity)
@@ -51,6 +62,11 @@ namespace E_Commerce_App_Practices_1.Data.Base
             entityEntry.State = EntityState.Modified;
 
             await _context.SaveChangesAsync();
+        }
+
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
     }
 }

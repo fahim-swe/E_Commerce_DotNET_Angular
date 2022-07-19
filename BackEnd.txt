@@ -1,0 +1,25 @@
+dotnet ef migrations add InitialCreate -o Data/Migrations
+dotnet ef database update
+
+// setup seed database
+API error handling 
+Introduction: 
+200--------Ok
+300--------Redirecting
+400--------Client error
+500--------Server error
+
+
+
+Generic repository in an anti-pattern
+To solve this
+
+public interface IRepository<T> 
+{
+    IReadOnlyList<T> ListAllAsync();
+    IReadOnlyList<T> FindAsync(Expression<Func<T, bool>> query);
+    T GetById(int id);
+    void Add(T item);
+    void Update(T item);
+    void Delete(T item);
+}
