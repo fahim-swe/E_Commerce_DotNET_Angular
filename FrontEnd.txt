@@ -1,0 +1,41 @@
+npm install -g @angluar/cli 
+
+Singal Page Application: Have only index.html page 
+ 
+ 
+npm install -f  font-awesome
+
+
+ng g c nav-bar --skip-tests
+
+** Import 
+-> File and folder structure 
+-> angluar services
+-> building the UI for the shop
+-> pagination 
+-> filtering 
+
+File-Folder structure in Angular 
+
+App Module
+Core Module: Sigletons(NavBar)
+
+Shared Module: Shared components. 
+Feature Module: App features, Each feature
+    we create will have its own module and routing 
+
+
+// File and folders organising 
+ng g m core : src/app/core/core.module.ts (190 bytes)
+ng g m shop
+ng g m shared
+
+
+// In site shop module
+ng g c shop --flat  --skip-tests
+ng g s shop --skip-tests --flat 
+
+ng g m shop-routing --flat
+
+
+// Angular services is Sigletons

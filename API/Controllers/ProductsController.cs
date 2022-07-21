@@ -33,6 +33,8 @@ namespace API.Controllers
             return Ok(products);
         }
 
+        
+
         [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {

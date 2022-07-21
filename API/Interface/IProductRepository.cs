@@ -13,6 +13,8 @@ namespace API.Interface
     {
         Task<ProductToReturnDto> GetProductByIdAsync(int id);
 
+        Task<int> TotallCount();
+
         Task<Pagination<ProductToReturnDto>> GetProductsAsync(ProductSpecParams param);
 
         Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync();

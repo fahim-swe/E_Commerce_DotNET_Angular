@@ -60,19 +60,19 @@ namespace API.Service
             if(param.BrandId != null) products = products.Where(x => x.ProductBrand.Id == param.BrandId);
             if(param.TypeId != null) products = products.Where(x => x.ProductType.Id == param.TypeId);
 
-
+            if(param.Search != null) products = products.Where(x => x.Name.Contains(param.Search));
             var _res = await products
-                .Skip((param.PageIndex - 1) * param.PageSize)
+                .Skip((param.PageIndex-1) * param.PageSize)
                 .Take(param.PageSize)
                 .ToListAsync();
             
-            var total = await _context.Product.CountAsync();
+            var total = await products.CountAsync();
 
             var result = new Pagination<ProductToReturnDto>()
             {
                 Data = _mapper.Map<List<ProductToReturnDto>>(_res),
                 PageIndex = param.PageIndex,
-                PageSize = param.PageSize,
+                PageSize = (param.PageSize > total) ? total : param.PageSize,
                 Count = total
             };
                     
@@ -82,6 +82,11 @@ namespace API.Service
         public async Task<IReadOnlyList<ProductType>> GetProductTypesAsync()
         {
             return await _context.ProductTypes.ToListAsync();
+        }
+
+        public async Task<int> TotallCount()
+        {
+            return await _context.Product.CountAsync();
         }
     }
 }
