@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <section class="col-3">
+        <section class="col-md-3">
             
             <h5 class="text-warning ml-3">Sort</h5>
             <select class="form-select form-select-lg mb-3"
@@ -56,13 +56,13 @@
                </app-paging-header>  
 
                 <form [formGroup]="searchFrom" (ngSubmit)="searchKey()" class="row g-2">
-                    <div class="col-auto">
+                    <div class="col-md-6">
                         <label for="inputPassword2" class="visually-hidden">Password</label>
                         <input type="text" class="form-control" placeholder="Search.."
                           formControlName="searchKey"
                         >
                       </div>
-                      <div class="col-auto">
+                      <div class="col-md-6">
 
                         <button type="submit" class="btn btn-outline-primary mb-3 me-1">Search</button>
                         <button type="reset" (click)="resetAll()" class="btn btn-outline-success mb-3">Reset</button>
@@ -71,7 +71,7 @@
             </div>
 
             <div class="row">
-              <div class="col-4 mb-3" *ngFor="let item of products">
+              <div class="col-md-4 mb-3" *ngFor="let item of products">
                 <app-product-item [product]="item"></app-product-item>
               </div>
             </div>

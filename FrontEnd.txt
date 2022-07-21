@@ -39,3 +39,23 @@ ng g m shop-routing --flat
 
 
 // Angular services is Sigletons
+
+
+Adding new feature modules
+Setting up routes
+Nav links
+Lazy loading 
+
+
+SPA's (singal page application)  need routers
+Angular router will load a component when route is activated
+<RouterOutlet><RouterOutlet>
+Module architecture of our app encourages lazy loading  
+
+
+** Crating additional components to route to 
+ng g m home
+cd home
+ng g c home -skip-tests --flat
+cd shop
+ng g c product-details --skip-tests

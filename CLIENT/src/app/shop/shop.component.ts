@@ -68,6 +68,8 @@ export class ShopComponent implements OnInit {
     })
   }
 
+  
+
   getTypes()
   {
     this.shopService.getTypes().subscribe(res => {

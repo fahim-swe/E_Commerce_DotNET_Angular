@@ -13,6 +13,7 @@ import { ShopModule } from './shop/shop.module';
 
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './home/home.module';
 
 
 @NgModule({
@@ -27,10 +28,8 @@ import { SharedModule } from './shared/shared.module';
     
     HttpClientModule,
     CoreModule,
-    ShopModule,
     SharedModule,
-
-
+    HomeModule,
     MatPaginatorModule
    
   ],

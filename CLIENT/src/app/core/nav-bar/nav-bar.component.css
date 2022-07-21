@@ -32,3 +32,25 @@
     top: -12px;
     left: 20px;
 }
+
+a{
+    text-decoration: none;
+    color: #343a40;
+    
+}
+
+a.active{
+    color: orange;
+}
+
+
+.logo
+{
+    cursor: pointer;
+    outline: none;
+}
+
+.btn
+{
+    /* outline: none; */
+}
