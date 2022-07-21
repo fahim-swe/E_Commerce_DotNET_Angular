@@ -1,0 +1,9 @@
+<div class="col-auto" *ngIf="this.totallCount  > 0" >
+    <span>Showing <strong> {{this.pageNumber}} - {{this.pageNumber + this.pageSize -1}} </strong> out of <strong> 
+      {{this.totallCount}}
+    </strong> Result</span>
+</div>
+
+<div class="col-auto" *ngIf="this.totallCount == 0">
+  <span>There are <strong> 0 </strong> Results for this filter</span>
+</div>
