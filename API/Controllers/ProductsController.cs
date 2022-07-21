@@ -36,13 +36,13 @@ namespace API.Controllers
         
 
         [HttpGet("{id}")]
-        public IActionResult GetProduct(int id)
+        public async Task<ActionResult<ProductToReturnDto>> GetProduct(int id)
         {
-            var product = _productRepo.GetProductByIdAsync(id);
+            var product = await _productRepo.GetProductByIdAsync(id);
             return Ok(product);
-        }
+        } 
 
-         [HttpGet("brands")]
+        [HttpGet("brands")]
         public async Task<ActionResult<List<ProductBrand>>> GetProductBrands()
         {
             var products = await _productRepo.GetProductBrandsAsync();

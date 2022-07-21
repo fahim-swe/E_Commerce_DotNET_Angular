@@ -33,10 +33,9 @@ namespace API.Service
         public async Task<ProductToReturnDto> GetProductByIdAsync(int id)
         {
             var product = await _context.Product
-                    .Include( t => t.ProductType)
                     .Include( b => b.ProductBrand)
+                    .Include( t => t.ProductType)
                     .FirstOrDefaultAsync(x => x.Id == id);
-            
             return _mapper.Map<ProductToReturnDto>(product);
         }
 
