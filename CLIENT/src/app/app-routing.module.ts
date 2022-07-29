@@ -5,6 +5,7 @@ import { ProductDetailsComponent } from './shop/product-details/product-details.
 
 import { ShopComponent } from './shop/shop.component';
 
+
 const routes: Routes = [
 
   {path: '', component: HomeComponent},

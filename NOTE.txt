@@ -1,0 +1,28 @@
+Section: 13
+
+API Basket 
+-> Where to 'store' the Basket
+-> Adding redis to the API
+-> Creating the Basket repository & controller 
+-> Seperate database
+
+Goal: To set up and configure Redis to store the customer basket in server memory 
+and create the supporting repository and controller
+
+Where to store the basket? 
+database -> Local storage -> cookie -> redis
+
+Redis: In memory data structure store supports strings, hashes, lists, sets, 
+Key/Value store
+fest 
+Persists data by using snapshots every minute 
+Data can be given time to live 
+Great for caching data 
+
+
+
+// Setting up Redis 
+StackExchange.Redis (NuGet)
+
+
+https://techviewleo.com/install-redisdesktopmanager-gui-for-redis-on-ubuntu-debian/

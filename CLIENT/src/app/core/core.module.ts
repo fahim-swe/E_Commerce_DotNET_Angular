@@ -6,11 +6,13 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
 
 
 
+
 @NgModule({
   declarations: [NavBarComponent, SectionHeaderComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+  
   ], 
   exports: [NavBarComponent, SectionHeaderComponent]
 })

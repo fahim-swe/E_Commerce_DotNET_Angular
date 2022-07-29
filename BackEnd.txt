@@ -23,3 +23,24 @@ public interface IRepository<T>
     void Update(T item);
     void Delete(T item);
 }
+
+
+
+
+
+Error handling and exceptions
+Developer exception page
+Validation errors
+Http response errors
+Customising the error handling
+Middleware 
+Swagger
+
+
+200--- Range Ok
+300--- Redirection
+400--- Client error
+500--- Server error
+
+
+

@@ -59,3 +59,19 @@ cd home
 ng g c home -skip-tests --flat
 cd shop
 ng g c product-details --skip-tests
+
+
+
+
+Interceptors are a way to do some work for every single HTTP request or response.
+Add a token or some custom HTTP header for all outgoing HTTP requests.
+Catch HTTP responses to do some custom formatting (i.e. convert CSV to JSON) before handing the data over to your service/component.
+Log all HTTP activity in the console
+
+// Section: 11
+Error handing in angluar
+Http Interceptors
+Adding toast notifications
+Troubleshooting tips
+
+To handle errors we receive from the API centrally and handled by the http Interceptors
